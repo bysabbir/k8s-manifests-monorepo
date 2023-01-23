@@ -15,8 +15,7 @@ spec:
       labels:
         app: bk-app
     spec:
-      containers:
-      - image: busybox
-        name: bk-rest-app
-        command:
-          - ["sleep", "10"]
+    containers:
+    - name: myapp-container
+      image: busybox:1.28
+      command: ['sh', '-c', 'sleep 10']
