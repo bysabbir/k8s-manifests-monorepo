@@ -4,13 +4,7 @@ metadata:
   labels:
     app: bk-app
   name: bk-app
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: bk.sabbir.dev
-    external-dns.alpha.kubernetes.io/ttl: "120"
 spec:
-  externalIPs:
-  - 10.0.2.15
-  - <public-ip>
   ports:
   - port: 80
     protocol: TCP
