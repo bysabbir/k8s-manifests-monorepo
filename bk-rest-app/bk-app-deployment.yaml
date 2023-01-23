@@ -17,16 +17,11 @@ spec:
       maxUnavailable: 20%
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: bk-app
     spec:
       containers:
-      - image: bysabbir/bk-ecs
+      - image: busybox
         name: bk-rest-app
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8888
-        envFrom:
-        - configMapRef:
-            name: bk-app-config
+        command:
+          - ["sleep", "10"]
