@@ -6,7 +6,7 @@ metadata:
     app: bk-app
   name: bk-app
 spec:
-  replicas: 10
+  replicas: 5
   selector:
     matchLabels:
       app: bk-app
@@ -22,7 +22,7 @@ spec:
         app: bk-app
     spec:
       containers:
-      - image: registry.sabbir.dev/bk-rest-app
+      - image: bysabbir/bk-ecs
         name: bk-rest-app
         imagePullPolicy: Always
         livenessProbe:
@@ -40,5 +40,3 @@ spec:
         envFrom:
         - configMapRef:
             name: bk-app-config
-      imagePullSecrets:
-      - name: registry.sabbir.dev
